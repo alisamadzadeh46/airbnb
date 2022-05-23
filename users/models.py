@@ -8,9 +8,9 @@ class User(AbstractUser):
     GENDER_OTHER = "other"
 
     GENDER_CHOICES = (
-        (GENDER_MALE, "male"),
-        (GENDER_FEMALE, "FEMALE"),
-        (GENDER_OTHER, "OTHER")
+        (GENDER_MALE, "Male"),
+        (GENDER_FEMALE, "Female"),
+        (GENDER_OTHER, "Other")
     )
 
     LANGUAGE_ENGLISH = "en"
