@@ -10,3 +10,8 @@ class ItemAdmin(admin.ModelAdmin):
 @admin.register(Room)
 class RoomAdmin(admin.ModelAdmin):
     pass
+
+
+@admin.register(Photo)
+class PhotoAdmin(admin.ModelAdmin):
+    pass
