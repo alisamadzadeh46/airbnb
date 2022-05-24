@@ -5,14 +5,18 @@ from .models import *
 
 @admin.register(User)
 class CustomUserAdmin(admin.ModelAdmin):
-    fieldsets = (
+    fieldsets = UserAdmin.fieldsets + (
         (
-            "Banana",
+            "Custom profile",
             {
                 "fields": (
                     "avatar",
                     "gender",
-                    "bio"
+                    "bio",
+                    "birthdate",
+                    "language",
+                    "currency",
+                    "superhost",
                 )
             }
         ),
