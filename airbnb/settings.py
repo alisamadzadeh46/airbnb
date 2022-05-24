@@ -37,6 +37,10 @@ DJANGO_APPS = [
     'django.contrib.staticfiles',
 ]
 
+THIRD_PARTY_APPS = [
+
+]
+
 PROJECT_APPS = [
     'conversations.apps.ConversationsConfig',
     'lists.apps.ListsConfig',
@@ -47,7 +51,7 @@ PROJECT_APPS = [
     'core.apps.CoreConfig',
 ]
 
-INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS
+INSTALLED_APPS = DJANGO_APPS + PROJECT_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
