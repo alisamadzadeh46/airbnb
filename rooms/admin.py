@@ -4,6 +4,7 @@ from .models import *
 
 @admin.register(RoomType, Facility, Amenity, HouseRule)
 class ItemAdmin(admin.ModelAdmin):
+
     pass
 
 
