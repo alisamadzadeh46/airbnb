@@ -22,6 +22,10 @@ class RoomAdmin(admin.ModelAdmin):
         "check_in",
         "check_out",
         "instant_book")
+    list_filter = ("city", "country", "instant_book")
+    search_fields = ("=city", "^host__username")
+    search_help_text = "search city and host"
+    list_per_page = 5
 
 
 @admin.register(Photo)
