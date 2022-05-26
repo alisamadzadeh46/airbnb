@@ -4,9 +4,9 @@ from .models import *
 
 @admin.register(Message)
 class MessageAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("__str__", "created")
 
 
 @admin.register(Conversation)
 class ConversationAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("__str__", "count_messages", "count_participants")
