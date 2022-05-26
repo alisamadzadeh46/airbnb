@@ -37,6 +37,7 @@ class RoomAdmin(admin.ModelAdmin):
         "check_in",
         "check_out",
         "count_amenities",
+        "count_photos",
         "instant_book")
     list_filter = (
         "host__superhost", "city", "country", "instant_book", "room_type", "amenities", "facilities", "house_rules")
@@ -48,6 +49,9 @@ class RoomAdmin(admin.ModelAdmin):
 
     def count_amenities(self, obj):
         return obj.amenities.count()
+
+    def count_photos(self, obj):
+        return obj.photos.count()
 
 
 @admin.register(Photo)
