@@ -27,3 +27,4 @@ class CustomUserAdmin(admin.ModelAdmin):
     list_filter = UserAdmin.list_filter + (
         "superhost",
     )
+    search_fields = list_display
