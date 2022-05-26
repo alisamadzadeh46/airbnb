@@ -4,4 +4,9 @@ from .models import *
 
 @admin.register(Reservation)
 class ReservationAdmin(admin.ModelAdmin):
-    pass
+    list_display = (
+        "room",
+        "status",
+        "check_in",
+        "check_out"
+    )
