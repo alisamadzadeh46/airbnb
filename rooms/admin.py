@@ -4,7 +4,10 @@ from .models import *
 
 @admin.register(RoomType, Facility, Amenity, HouseRule)
 class ItemAdmin(admin.ModelAdmin):
-    pass
+    list_display = ("name", "used_by")
+
+    def used_by(self, obj):
+        return obj.rooms.count()
 
 
 @admin.register(Room)
