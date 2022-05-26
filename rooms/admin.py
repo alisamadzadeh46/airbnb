@@ -41,6 +41,7 @@ class RoomAdmin(admin.ModelAdmin):
         "check_out",
         "count_amenities",
         "count_photos",
+        "total_rating",
         "instant_book")
     list_filter = (
         "host__superhost", "city", "country", "instant_book", "room_type", "amenities", "facilities", "house_rules")
