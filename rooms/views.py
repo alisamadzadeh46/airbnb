@@ -1,5 +1,6 @@
+from django.http import HttpResponse
 from django.shortcuts import render
 
 
 def all_rooms(request):
-    pass
+    return HttpResponse(content="Hi")
