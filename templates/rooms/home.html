@@ -6,12 +6,13 @@
 
 {% block content %}
 
-    Page {{ page }} of {{ page_count }}
-    
-    {% for page in page_rang %}
-    {{ page }}
-    {% endfor %}
-    
+    <h5>
+        Page {{ rooms.number }} of {{ rooms.paginator.num_pages }}
+    </h5>
+
+
+
+
 
 
 {% endblock %}
