@@ -3,6 +3,16 @@
     Home
 {% endblock %}
 
+
 {% block content %}
+
+    Page {{ page }} of {{ page_count }}
+    
+    {% for page in page_rang %}
+    {{ page }}
+    {% endfor %}
+    
+
+
 {% endblock %}
 
