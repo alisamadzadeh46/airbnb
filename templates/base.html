@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-with, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>All Rooms</title>
+    <title>{% block page_name %} {% endblock %} | Airbnb </title>
 </head>
 <body>
-{% for room in rooms %}
 
-{% endfor %}
+{% block content %}
+{% endblock %}
 
 </body>
 </html>
