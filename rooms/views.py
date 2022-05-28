@@ -6,3 +6,7 @@ from django.views.generic import ListView
 
 class HomeView(ListView):
     model = models.Room
+    paginate_by = 10
+    ordering = "created"
+    paginate_orphans = 5
+    page_kwarg = "page"
