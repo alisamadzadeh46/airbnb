@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from . import models
+from . import models, forms
 from django.views.generic import ListView, DetailView
 
 
@@ -14,3 +13,6 @@ class HomeView(ListView):
 class RoomDetail(DetailView):
     model = models.Room
 
+
+def search(request):
+    pass
