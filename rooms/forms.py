@@ -4,6 +4,7 @@ from . import models
 
 class SearchForm(forms.Form):
     city = forms.CharField(initial="Anywhere")
+    country = forms.CharField(initial="New York")
     price = forms.IntegerField(required=False)
     room_type = forms.ModelChoiceField(empty_label="Any kind", queryset=models.RoomType.objects.all())
     guests = forms.IntegerField(required=False)
