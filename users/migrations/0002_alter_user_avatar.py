@@ -11,7 +11,7 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterField(
-            model_name='user',
+            model_name='users',
             name='avatar',
             field=models.ImageField(blank=True, upload_to='avatars'),
         ),

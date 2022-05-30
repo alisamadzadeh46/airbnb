@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('check_in', models.IntegerField()),
                 ('value', models.IntegerField()),
                 ('room', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='rooms.room')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
+                ('users', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
             options={
                 'abstract': False,
