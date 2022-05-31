@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -141,5 +141,5 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # Email
 EMAIL_HOST = "smtp.mailgun.org"
 EMAIL_PORT = "587"
-EMAIL_HOST_USER = "brad@sandbox452fecd55d0e4970bf87877ffd8b3371.mailgun.org"
-EMAIL_HOST_PASSWORD = "1f8e08ac7173ade963aff37c1948a308-27a562f9-15b7cc25"
+EMAIL_HOST_USER = os.environ.get("MAILGUN_USERNAME")
+EMAIL_HOST_PASSWORD = os.environ.get("MAILGUN_PASSWORD")
