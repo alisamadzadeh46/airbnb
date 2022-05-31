@@ -35,4 +35,10 @@ class SignUpView(forms.ModelForm):
         else:
             return password
 
-
+    def save(self, *args, **kwargs):
+        username = self.cleaned_data.get("username")
+        password = self.cleaned_data.get("password")
+        user = super().save(commit=False)
+        user.username = username
+        user.set_password(password)
+        user.save()
