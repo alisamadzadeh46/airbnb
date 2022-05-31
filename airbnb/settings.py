@@ -137,3 +137,9 @@ AUTH_USER_MODEL = 'users.User'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+# Email
+EMAIL_HOST = "smtp.mailgun.org"
+EMAIL_PORT = "587"
+EMAIL_HOST_USER = "brad@sandbox452fecd55d0e4970bf87877ffd8b3371.mailgun.org"
+EMAIL_HOST_PASSWORD = "1f8e08ac7173ade963aff37c1948a308-27a562f9-15b7cc25"
