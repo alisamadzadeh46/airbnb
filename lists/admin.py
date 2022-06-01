@@ -6,7 +6,7 @@ from .models import *
 class ListAdmin(admin.ModelAdmin):
     list_display = (
         "name",
-        "users",
+        "user",
         "count_rooms"
     )
     search_fields = ("name",)
