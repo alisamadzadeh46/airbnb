@@ -54,7 +54,7 @@ class User(AbstractUser):
     superhost = models.BooleanField(default=False)
     email_verified = models.BooleanField(default=False)
     email_secret = models.CharField(max_length=120, default="", blank=True)
-    login_method = models.CharField(max_length=50, choices=LOGIN_CHOICES)
+    login_method = models.CharField(max_length=50, choices=LOGIN_CHOICES,default=LOGIN_EMAIL)
 
     def verify_email(self):
         if self.email_verified is False:
