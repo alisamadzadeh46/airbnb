@@ -98,6 +98,7 @@ def github_callback(request):
                             first_name=name,
                             bio=bio,
                             email=email,
+                            email_verified=True,
                             login_method=models.User.LOGIN_GITHUB
                         )
                         user.set_unusable_password()
@@ -153,7 +154,16 @@ def kakao_callback(request):
                 raise KakaoException()
 
         except models.User.DoesNotExist:
-            pass
-
+            user = models.User.objects.create(
+                email=email,
+                username=email,
+                first_name=nickname,
+                login_method=models.User.LOGIN_KAKAO,
+                email_verified=True
+            )
+            user.set_unusable_password()
+            user.save()
+        login(request, user)
+        return redirect(reverse("core:home"))
     except KakaoException:
         return redirect(reverse("users:login"))
