@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import FormView
 from . import forms, models
+from django.core.files.base import ContentFile
 
 
 class LoginView(FormView):
@@ -142,7 +143,7 @@ def kakao_callback(request):
             'Authorization': f"Bearer{access_token}"
         }, )
         profile_json = profile_request.json()
-        email = profile_json.get("kaccount_email")
+        email = profile_json.get("kaccount_email", None)
         if email is None:
             raise KakaoException()
         properties = profile_json.get("properties")
@@ -152,7 +153,6 @@ def kakao_callback(request):
             user = models.User.objects.get(email=email)
             if user.login_method != models.User.LOGIN_KAKAO:
                 raise KakaoException()
-
         except models.User.DoesNotExist:
             user = models.User.objects.create(
                 email=email,
@@ -164,6 +164,9 @@ def kakao_callback(request):
             user.set_unusable_password()
             user.save()
         login(request, user)
+        if profile_image is not None:
+            photo_request = requests.get(profile_image)
+            user.avatar.save(f"{nickname}-avatar", ContentFile(photo_request.content))
         return redirect(reverse("core:home"))
     except KakaoException:
         return redirect(reverse("users:login"))
