@@ -112,3 +112,13 @@ def github_callback(request):
 
     except GithubException:
         return redirect(reverse("users:login"))
+
+
+def kakao_login(request):
+    app_key = os.environ.get("K_KEY")
+    redirect_uri = "http://127.0.0.1:8000/users/login/kakao/callback"
+    return redirect(
+        f"https://kauth.kakao.com//oauth/authorize?client_id={app_key}&redirect_uri=${redirect_uri}&response_type=code")
+
+def kakao_callback(request):
+    pass
