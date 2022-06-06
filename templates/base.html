@@ -1,16 +1,20 @@
+{% load static %}
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-with, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <title>{% block page_name %} {% endblock %} | Airbnb </title>
 </head>
 <body>
 {% include "partials/header.html" %}
 
 {% block content %}
-     {% include 'partials/social_login.html' %}
+    {% include 'partials/social_login.html' %}
 {% endblock %}
 
 {% include "partials/footer.html" %}
